@@ -11,16 +11,17 @@ export default function Icon() {
           width: 32,
           height: 32,
           borderRadius: 6,
-          background: "#1a7a6d",
+          background: "#16588E",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           color: "white",
-          fontSize: 20,
-          fontWeight: 700,
+          fontSize: 16,
+          fontWeight: 800,
+          letterSpacing: -1,
         }}
       >
-        M
+        BL
       </div>
     ),
     { ...size }

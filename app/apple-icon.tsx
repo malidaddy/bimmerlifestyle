@@ -11,16 +11,17 @@ export default function AppleIcon() {
           width: 180,
           height: 180,
           borderRadius: 36,
-          background: "#1a7a6d",
+          background: "#16588E",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           color: "white",
-          fontSize: 110,
-          fontWeight: 700,
+          fontSize: 90,
+          fontWeight: 800,
+          letterSpacing: -4,
         }}
       >
-        M
+        BL
       </div>
     ),
     { ...size }

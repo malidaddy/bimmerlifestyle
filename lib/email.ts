@@ -1,8 +1,22 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { siteConfig } from "@/config/site";
 
-function getResend() {
-  return new Resend(process.env.RESEND_API_KEY || "");
+function getTransporter() {
+  return nodemailer.createTransport({
+    host: process.env.EMAIL_SERVER_HOST || "smtp-relay.brevo.com",
+    port: Number(process.env.EMAIL_SERVER_PORT) || 587,
+    secure: false,
+    auth: {
+      user: process.env.EMAIL_SERVER_USER || "",
+      pass: process.env.EMAIL_SERVER_PASSWORD || "",
+    },
+  });
+}
+
+function getFromAddress(): string {
+  const name = process.env.EMAIL_FROM_NAME || "Bimmer Lifestyle";
+  const address = process.env.EMAIL_FROM_ADDRESS || "no.reply@bimmerlifestyle.com";
+  return `${name} <${address}>`;
 }
 
 /**
@@ -50,22 +64,27 @@ export async function sendFormEmail(
     return { error: { message: "No recipients configured" } };
   }
 
-  return getResend().emails.send({
-    from: process.env.CONTACT_EMAIL_FROM!,
-    to: recipients,
-    replyTo: data.email,
-    subject: `[${label}] ${data.subject}`,
-    html: `
-      <h2>New ${escapeHtml(label)} Submission</h2>
-      <p><strong>Name:</strong> ${escapeHtml(data.name)}</p>
-      <p><strong>Email:</strong> ${escapeHtml(data.email)}</p>
-      ${data.phone ? `<p><strong>Phone:</strong> ${escapeHtml(data.phone)}</p>` : ""}
-      <p><strong>Subject:</strong> ${escapeHtml(data.subject)}</p>
-      <hr />
-      <p><strong>Message:</strong></p>
-      <p>${escapeHtml(data.message).replace(/\n/g, "<br>")}</p>
-    `,
-  });
+  try {
+    const info = await getTransporter().sendMail({
+      from: getFromAddress(),
+      to: recipients.join(", "),
+      replyTo: data.email,
+      subject: `[${label}] ${data.subject}`,
+      html: `
+        <h2>New ${escapeHtml(label)} Submission</h2>
+        <p><strong>Name:</strong> ${escapeHtml(data.name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(data.email)}</p>
+        ${data.phone ? `<p><strong>Phone:</strong> ${escapeHtml(data.phone)}</p>` : ""}
+        <p><strong>Subject:</strong> ${escapeHtml(data.subject)}</p>
+        <hr />
+        <p><strong>Message:</strong></p>
+        <p>${escapeHtml(data.message).replace(/\n/g, "<br>")}</p>
+      `,
+    });
+    return { data: { id: info.messageId }, error: null };
+  } catch (err) {
+    return { error: { message: (err as Error).message } };
+  }
 }
 
 /** Backwards-compatible alias - sends via the CONTACT form type */
@@ -77,26 +96,36 @@ export async function sendAutoResponse(toEmail: string, toName: string) {
   const { autoResponder } = siteConfig.contactForm;
   if (!autoResponder.enabled) return { data: null, error: null };
 
-  return getResend().emails.send({
-    from: process.env.CONTACT_EMAIL_FROM!,
-    to: toEmail,
-    subject: autoResponder.subject,
-    html: `
-      <p>Hi ${escapeHtml(toName)},</p>
-      <p>${escapeHtml(autoResponder.message)}</p>
-      <br />
-      <p>Best regards,<br />${escapeHtml(siteConfig.name)}</p>
-    `,
-  });
+  try {
+    const info = await getTransporter().sendMail({
+      from: getFromAddress(),
+      to: toEmail,
+      subject: autoResponder.subject,
+      html: `
+        <p>Hi ${escapeHtml(toName)},</p>
+        <p>${escapeHtml(autoResponder.message)}</p>
+        <br />
+        <p>Best regards,<br />${escapeHtml(siteConfig.name)}</p>
+      `,
+    });
+    return { data: { id: info.messageId }, error: null };
+  } catch (err) {
+    return { error: { message: (err as Error).message } };
+  }
 }
 
 export async function addNewsletterSubscriber(email: string) {
-  return getResend().emails.send({
-    from: process.env.CONTACT_EMAIL_FROM!,
-    to: email,
-    subject: "Welcome to our newsletter!",
-    html: `<p>Thank you for subscribing to our newsletter. We'll keep you updated with the latest news and insights.</p>`,
-  });
+  try {
+    const info = await getTransporter().sendMail({
+      from: getFromAddress(),
+      to: email,
+      subject: "Welcome to our newsletter!",
+      html: `<p>Thank you for subscribing to our newsletter. We'll keep you updated with the latest news and insights.</p>`,
+    });
+    return { data: { id: info.messageId }, error: null };
+  } catch (err) {
+    return { error: { message: (err as Error).message } };
+  }
 }
 
 function escapeHtml(text: string): string {
