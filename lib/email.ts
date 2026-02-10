@@ -1,7 +1,9 @@
 import { Resend } from "resend";
 import { siteConfig } from "@/config/site";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY || "");
+}
 
 /**
  * Get recipients for a specific form type.
@@ -48,7 +50,7 @@ export async function sendFormEmail(
     return { error: { message: "No recipients configured" } };
   }
 
-  return resend.emails.send({
+  return getResend().emails.send({
     from: process.env.CONTACT_EMAIL_FROM!,
     to: recipients,
     replyTo: data.email,
@@ -75,7 +77,7 @@ export async function sendAutoResponse(toEmail: string, toName: string) {
   const { autoResponder } = siteConfig.contactForm;
   if (!autoResponder.enabled) return { data: null, error: null };
 
-  return resend.emails.send({
+  return getResend().emails.send({
     from: process.env.CONTACT_EMAIL_FROM!,
     to: toEmail,
     subject: autoResponder.subject,
@@ -89,7 +91,7 @@ export async function sendAutoResponse(toEmail: string, toName: string) {
 }
 
 export async function addNewsletterSubscriber(email: string) {
-  return resend.emails.send({
+  return getResend().emails.send({
     from: process.env.CONTACT_EMAIL_FROM!,
     to: email,
     subject: "Welcome to our newsletter!",
