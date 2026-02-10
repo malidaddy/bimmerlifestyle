@@ -19,6 +19,15 @@ export interface Feature {
   icon: string;
 }
 
+export interface GoogleReview {
+  id: string;
+  name: string;
+  rating: number;
+  quote: string;
+  timeDescription: string;
+  image?: string;
+}
+
 export interface GalleryImage {
   src: string;
   alt: string;

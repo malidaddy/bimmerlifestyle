@@ -58,18 +58,18 @@ export function HeroVideo({
               {badge}
             </Badge>
           )}
-          <h1 className="font-heading max-w-5xl text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
+          <h1 className="font-heading max-w-5xl text-4xl font-extrabold tracking-tight md:text-6xl lg:text-8xl">
             {headline}
           </h1>
           {description && (
-            <p className="mt-6 max-w-2xl text-lg text-zinc-200 md:text-xl">
+            <p className="mt-6 max-w-2xl text-lg text-zinc-100 md:text-2xl leading-relaxed">
               {description}
             </p>
           )}
           {(primaryCta || secondaryCta) && (
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-12 flex flex-col gap-4 sm:flex-row">
               {primaryCta && (
-                <Button asChild size="lg" className="text-base px-8">
+                <Button asChild size="lg" className="btn-lg shadow-lg shadow-primary/30">
                   <Link href={primaryCta.href}>{primaryCta.text}</Link>
                 </Button>
               )}
@@ -78,7 +78,7 @@ export function HeroVideo({
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-white/40 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 text-base px-8"
+                  className="btn-lg border-2 border-white/40 bg-white/10 text-white backdrop-blur-sm hover:bg-white/25 shadow-lg"
                 >
                   <Link href={secondaryCta.href}>{secondaryCta.text}</Link>
                 </Button>

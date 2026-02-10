@@ -2,7 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
+import { Loader2, Send } from "lucide-react";
 import {
   contactFormSchema,
   type ContactFormData,
@@ -57,76 +57,91 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-7">
       <HoneypotFields />
-      <div className="grid gap-6 sm:grid-cols-2">
-        <div className="space-y-2">
-          <Label htmlFor="name">Name</Label>
+
+      <div className="grid gap-7 sm:grid-cols-2">
+        <div className="space-y-2.5">
+          <Label htmlFor="name">Full Name</Label>
           <Input
             id="name"
-            placeholder="Your name"
+            placeholder="Your full name"
+            className="border-2"
             {...register("name")}
           />
           {errors.name && (
-            <p className="text-sm text-destructive">{errors.name.message}</p>
+            <p className="text-sm font-medium text-destructive">{errors.name.message}</p>
           )}
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
+        <div className="space-y-2.5">
+          <Label htmlFor="email">Email Address</Label>
           <Input
             id="email"
             type="email"
             placeholder="you@example.com"
+            className="border-2"
             {...register("email")}
           />
           {errors.email && (
-            <p className="text-sm text-destructive">{errors.email.message}</p>
+            <p className="text-sm font-medium text-destructive">{errors.email.message}</p>
           )}
         </div>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2">
-        <div className="space-y-2">
+      <div className="grid gap-7 sm:grid-cols-2">
+        <div className="space-y-2.5">
           <Label htmlFor="phone">Phone (optional)</Label>
           <Input
             id="phone"
             type="tel"
-            placeholder="+1 (555) 000-0000"
+            placeholder="+1 (876) 000-0000"
+            className="border-2"
             {...register("phone")}
           />
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2.5">
           <Label htmlFor="subject">Subject</Label>
           <Input
             id="subject"
             placeholder="How can we help?"
+            className="border-2"
             {...register("subject")}
           />
           {errors.subject && (
-            <p className="text-sm text-destructive">
+            <p className="text-sm font-medium text-destructive">
               {errors.subject.message}
             </p>
           )}
         </div>
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-2.5">
         <Label htmlFor="message">Message</Label>
         <Textarea
           id="message"
-          placeholder="Tell us about your project..."
-          rows={6}
+          placeholder="Tell us about your BMW, what service you need, or any questions you have..."
+          rows={7}
+          className="border-2"
           {...register("message")}
         />
         {errors.message && (
-          <p className="text-sm text-destructive">{errors.message.message}</p>
+          <p className="text-sm font-medium text-destructive">{errors.message.message}</p>
         )}
       </div>
 
-      <Button type="submit" size="lg" disabled={isSubmitting} className="btn-lg">
-        {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+      <Button
+        type="submit"
+        size="lg"
+        disabled={isSubmitting}
+        className="btn-lg w-full bg-[#E7222E] text-white shadow-lg shadow-[#E7222E]/20 hover:bg-[#c91c26] hover:shadow-[#E7222E]/30 transition-all duration-300"
+      >
+        {isSubmitting ? (
+          <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+        ) : (
+          <Send className="mr-2 h-5 w-5" />
+        )}
         Send Message
       </Button>
     </form>

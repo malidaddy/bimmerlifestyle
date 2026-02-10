@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Our Team",
   description:
-    "Meet the talented professionals and board members who drive our organization forward.",
+    "Meet the BMW enthusiasts and certified technicians behind Bimmer Lifestyle Autocare.",
 };
 
 export default function TeamPage() {
@@ -19,11 +19,15 @@ export default function TeamPage() {
       <Hero
         variant="centered"
         headline="Our Team"
-        description="Meet the people who make it all happen."
+        description="The BMW enthusiasts and certified technicians behind Bimmer Lifestyle Autocare."
+        image={{
+          src: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1920&q=80",
+          alt: "BMW mechanics working in garage",
+        }}
       />
       <TeamSection
-        title="Leadership"
-        description="Our experienced leadership team drives innovation and results."
+        title="Meet the Team"
+        description="Factory-trained specialists who eat, sleep, and breathe BMW."
         members={staff}
       />
       {board.length > 0 && (

@@ -1,3 +1,4 @@
+import { Hero } from "@/components/sections/hero";
 import { getAllPosts } from "@/lib/mdx";
 import { PostCard } from "@/components/blog/post-card";
 import { FeaturedPostCard } from "@/components/blog/featured-post-card";
@@ -5,7 +6,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Latest articles, insights, and company updates.",
+  description:
+    "Technical guides, build spotlights, and BMW care tips from the Bimmer Lifestyle team.",
 };
 
 export default async function BlogPage() {
@@ -15,17 +17,15 @@ export default async function BlogPage() {
 
   return (
     <>
-      {/* Intro */}
-      <section className="container pt-16 pb-8 md:pt-24 md:pb-12">
-        <div className="max-w-2xl">
-          <h1 className="font-heading text-3xl font-bold tracking-tight md:text-4xl">
-            News &amp; Insights
-          </h1>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Explore our latest articles, company updates, and industry insights.
-          </p>
-        </div>
-      </section>
+      <Hero
+        variant="centered"
+        headline="The Workshop Blog"
+        description="Technical guides, build spotlights, and BMW care tips from the Bimmer Lifestyle team."
+        image={{
+          src: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=1920&q=80",
+          alt: "BMW engine close-up in workshop",
+        }}
+      />
 
       {posts.length > 0 ? (
         <>

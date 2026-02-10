@@ -5,78 +5,89 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 215 25% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 215 25% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover-foreground: 215 25% 8%;
 
-    /* Primary: Teal */
-    --primary: 172 66% 30%;
-    --primary-foreground: 0 0% 98%;
+    /* Primary: Deep Navy Blue #16588E */
+    --primary: 207 73% 32%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 210 18% 95%;
+    --secondary-foreground: 215 25% 10%;
 
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 210 15% 94%;
+    --muted-foreground: 215 12% 38%;
 
-    /* Accent: Light teal */
-    --accent: 172 40% 95%;
-    --accent-foreground: 172 66% 20%;
+    /* Accent: BMW Red #E7222E */
+    --accent: 357 80% 52%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 357 80% 52%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 172 66% 30%;
+    --border: 215 20% 85%;
+    --input: 215 20% 85%;
+    --ring: 207 73% 32%;
 
+    /* Neo-brutalist: tighter radius, bolder feel */
     --radius: 0.5rem;
 
-    --chart-1: 172 66% 30%;
-    --chart-2: 197 37% 24%;
-    --chart-3: 43 74% 66%;
-    --chart-4: 27 87% 67%;
-    --chart-5: 12 76% 61%;
+    /* BMW Brand Palette — logo colors */
+    --bmw-navy: 207 73% 32%;
+    --bmw-blue: 210 100% 75%;
+    --bmw-red: 357 80% 52%;
+
+    --chart-1: 207 73% 32%;
+    --chart-2: 210 100% 75%;
+    --chart-3: 357 80% 52%;
+    --chart-4: 210 40% 50%;
+    --chart-5: 215 25% 20%;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 215 32% 5%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 3.9%;
+    --card: 215 28% 8%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 3.9%;
+    --popover: 215 28% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 172 66% 50%;
-    --primary-foreground: 240 10% 3.9%;
+    --primary: 207 73% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 3.7% 15.9%;
+    --secondary: 215 22% 14%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 215 22% 14%;
+    --muted-foreground: 210 10% 65%;
 
-    --accent: 172 66% 15%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 357 75% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 357 70% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 172 66% 50%;
+    --border: 215 22% 16%;
+    --input: 215 22% 16%;
+    --ring: 207 73% 50%;
 
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    /* BMW Brand Palette — dark mode */
+    --bmw-navy: 207 73% 45%;
+    --bmw-blue: 210 100% 75%;
+    --bmw-red: 357 75% 55%;
+
+    --chart-1: 207 73% 50%;
+    --chart-2: 210 100% 75%;
+    --chart-3: 357 80% 52%;
+    --chart-4: 210 40% 60%;
+    --chart-5: 215 30% 40%;
   }
 }
 
@@ -86,6 +97,14 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  /* Neo-brutalist: slightly bolder headings with tighter letter-spacing */
+  h1, h2, h3, h4 {
+    letter-spacing: -0.01em;
   }
   /* Remove 300ms mobile tap delay on all interactive elements */
   a,
@@ -96,11 +115,44 @@
   textarea {
     touch-action: manipulation;
   }
+  /* Prominent form inputs — taller, larger text, easier to read & tap */
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea {
+    @apply h-12 rounded-lg px-4 text-base !important;
+    font-size: 1rem !important;
+  }
+  textarea {
+    height: auto !important;
+    min-height: 140px;
+  }
+  label {
+    @apply text-base font-semibold !important;
+  }
 }
 
 @layer components {
   /* Buttons — opt-in via .btn-lg class only (do NOT use global button[type="submit"]) */
   .btn-lg {
-    @apply h-14 rounded-xl px-10 text-lg font-semibold !important;
+    @apply h-16 rounded-xl px-12 text-lg font-bold tracking-wide !important;
+  }
+
+  /* Neo-brutalist card border treatment — opt-in */
+  .card-brutal {
+    @apply border-2 border-foreground/10 shadow-[4px_4px_0_0_rgba(0,0,0,0.08)];
+  }
+  .dark .card-brutal {
+    @apply shadow-[4px_4px_0_0_rgba(255,255,255,0.04)];
+  }
+
+  /* BMW red accent underline for section headings — opt-in */
+  .heading-accent::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin: 0.75rem auto 0;
+    background: #E7222E;
+    border-radius: 2px;
   }
 }

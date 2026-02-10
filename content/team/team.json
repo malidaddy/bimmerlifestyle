@@ -1,64 +1,34 @@
 [
   {
-    "id": "jane-doe",
-    "name": "Jane Doe",
-    "role": "Chief Executive Officer",
-    "bio": "Jane brings over 20 years of industry experience in strategic leadership and organizational growth. She founded the company with a vision to deliver exceptional results for every client.",
+    "id": "owner",
+    "name": "Scott",
+    "role": "Founder & Lead Technician",
+    "bio": "With over 15 years of BMW-exclusive experience, Scott founded Bimmer Lifestyle Autocare with a vision to bring factory-level expertise to Kingston's BMW community.",
     "image": "/images/team/placeholder.svg",
     "social": {
-      "linkedin": "https://linkedin.com/in/janedoe",
-      "email": "jane@example.com"
+      "email": "scott@bimmerlifestyle.com"
     },
     "order": 1,
     "type": "team"
   },
   {
-    "id": "john-smith",
-    "name": "John Smith",
-    "role": "Chief Technology Officer",
-    "bio": "John is a seasoned technologist with deep expertise in web platforms, cloud infrastructure, and digital transformation. He leads our technical strategy and engineering team.",
+    "id": "tech-lead",
+    "name": "Andre",
+    "role": "Senior Diagnostic Technician",
+    "bio": "Andre specializes in BMW electronics and diagnostics. His ability to trace complex electrical faults has earned him a reputation as one of the best in the business.",
     "image": "/images/team/placeholder.svg",
-    "social": {
-      "linkedin": "https://linkedin.com/in/johnsmith",
-      "email": "john@example.com"
-    },
+    "social": {},
     "order": 2,
     "type": "team"
   },
   {
-    "id": "sarah-williams",
-    "name": "Sarah Williams",
-    "role": "Head of Design",
-    "bio": "Sarah leads our design practice with a focus on creating intuitive, accessible, and beautiful digital experiences that drive results for our clients.",
+    "id": "performance",
+    "name": "Damion",
+    "role": "Performance Specialist",
+    "bio": "Damion heads our performance division. From ECU tuning to full track builds, he brings an enthusiast's passion and an engineer's precision to every project.",
     "image": "/images/team/placeholder.svg",
-    "social": {
-      "linkedin": "https://linkedin.com/in/sarahwilliams"
-    },
+    "social": {},
     "order": 3,
     "type": "team"
-  },
-  {
-    "id": "michael-chen",
-    "name": "Michael Chen",
-    "role": "Board Chair",
-    "bio": "Michael has served on multiple corporate boards and brings extensive experience in governance, finance, and strategic oversight.",
-    "image": "/images/team/placeholder.svg",
-    "social": {
-      "linkedin": "https://linkedin.com/in/michaelchen"
-    },
-    "order": 1,
-    "type": "board"
-  },
-  {
-    "id": "emily-patel",
-    "name": "Emily Patel",
-    "role": "Board Director",
-    "bio": "Emily is a recognized leader in the technology sector with a track record of building and scaling successful organizations.",
-    "image": "/images/team/placeholder.svg",
-    "social": {
-      "linkedin": "https://linkedin.com/in/emilypatel"
-    },
-    "order": 2,
-    "type": "board"
   }
 ]

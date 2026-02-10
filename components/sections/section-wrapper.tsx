@@ -16,17 +16,19 @@ export function SectionWrapper({
   id,
 }: SectionWrapperProps) {
   return (
-    <section id={id} className={cn("py-16 md:py-24", className)}>
+    <section id={id} className={cn("py-20 md:py-28", className)}>
       <div className="container">
         {(title || description) && (
-          <div className="mx-auto mb-12 max-w-2xl text-center">
+          <div className="mx-auto mb-14 max-w-3xl text-center">
             {title && (
-              <h2 className="font-heading text-3xl font-bold tracking-tight md:text-4xl">
+              <h2 className="font-heading text-3xl font-extrabold uppercase tracking-tight md:text-5xl heading-accent">
                 {title}
               </h2>
             )}
             {description && (
-              <p className="mt-4 text-lg text-muted-foreground">{description}</p>
+              <p className="mt-5 text-lg text-muted-foreground md:text-xl leading-relaxed">
+                {description}
+              </p>
             )}
           </div>
         )}

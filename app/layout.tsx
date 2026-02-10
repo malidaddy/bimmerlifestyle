@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans, Barlow_Condensed } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/toaster";
 import { UmamiAnalytics } from "@/components/shared/analytics";
 import { ThemeProvider } from "@/components/shared/theme-provider";
+import { StructuredData } from "@/components/shared/structured-data";
 import "./globals.css";
 
-const fontSans = Inter({
+const fontSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
-const fontHeading = Inter({
+const fontHeading = Barlow_Condensed({
   subsets: ["latin"],
   variable: "--font-heading",
   weight: ["600", "700", "800"],
@@ -44,6 +45,27 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  keywords: [
+    "BMW repair Jamaica",
+    "BMW specialist Montego Bay",
+    "MINI Cooper service Jamaica",
+    "BMW diagnostics Jamaica",
+    "BMW performance tuning Jamaica",
+    "auto repair Montego Bay",
+    "BMW mechanic St James",
+    "Bimmer Lifestyle",
+    "BMW ECU coding Jamaica",
+    "BMW battery registration",
+  ],
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  other: {
+    "geo.region": "JM-08",
+    "geo.placename": "Montego Bay",
+    "geo.position": "18.4762;-77.9236",
+    ICBM: "18.4762, -77.9236",
+  },
 };
 
 export default function RootLayout({
@@ -53,6 +75,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <StructuredData />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",

@@ -1,99 +1,110 @@
 import { Hero } from "@/components/sections/hero";
 import { FeaturesSection } from "@/components/sections/features-section";
 import { ServicesSection } from "@/components/sections/services-section";
-import { StatsSection } from "@/components/sections/stats-section";
-import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { LoyaltyTiersSection } from "@/components/sections/loyalty-tiers-section";
+import { GoogleReviewsSection } from "@/components/sections/google-reviews-section";
+import { RewardsPromoSection } from "@/components/sections/rewards-promo-section";
 import { CtaSection } from "@/components/sections/cta-section";
 import { getServices } from "@/lib/content";
+import { getGoogleReviews } from "@/lib/google-reviews";
+import { loyaltyTiers } from "@/content/loyalty/tiers";
 
 const features = [
   {
-    title: "Performance First",
+    title: "BMW & MINI Specialist",
     description:
-      "Built on Next.js for blazing fast page loads and optimal Core Web Vitals scores.",
-    icon: "Zap",
+      "Over 20 years of dedicated BMW and MINI experience. Factory-trained technicians with island-wide reputation for excellence.",
+    icon: "Wrench",
   },
   {
-    title: "Fully Responsive",
+    title: "Performance & Tuning",
     description:
-      "Looks great on every device and screen size, from mobile to desktop.",
-    icon: "Monitor",
+      "ECU remapping, suspension upgrades, and full performance builds. We unlock your BMW's true potential with precision engineering.",
+    icon: "Gauge",
   },
   {
-    title: "Easy to Customize",
+    title: "Loyalty Rewards Club",
     description:
-      "Change colors, content, and layout with simple configuration files.",
-    icon: "Palette",
+      "Earn points on every service. Climb from Bronze to VIP Diamond and unlock free diagnostics, discounts, and vehicle recovery.",
+    icon: "Trophy",
   },
 ];
 
-const stats = [
-  { value: "99%", label: "Uptime" },
-  { value: "50+", label: "Projects Delivered" },
-  { value: "24/7", label: "Support Available" },
-  { value: "100%", label: "Client Satisfaction" },
-];
-
-const testimonials = [
+// Static fallback testimonials — used when Google API key is not configured
+const fallbackTestimonials = [
   {
     id: "1",
-    name: "Alex Johnson",
-    role: "CEO",
-    company: "TechCorp",
+    name: "Marcus Thompson",
+    role: "BMW F30 Owner",
+    company: "Montego Bay",
     quote:
-      "Working with this team transformed our online presence. The attention to detail and professionalism exceeded our expectations.",
+      "The team at Bimmer Lifestyle truly understands BMWs. They diagnosed an issue three other shops missed. I won't take my 3 Series anywhere else.",
   },
   {
     id: "2",
-    name: "Maria Santos",
-    role: "Founder",
-    company: "GreenStart",
+    name: "Khadija Williams",
+    role: "BMW X5 Owner",
+    company: "St. James",
     quote:
-      "They delivered a beautiful, fast website that perfectly represents our brand. The whole process was smooth and efficient.",
+      "Their loyalty program is amazing. After a few visits I'd already earned enough points for a free service. The Gold tier discount saves me real money.",
   },
   {
     id: "3",
-    name: "David Kim",
-    role: "Marketing Director",
-    company: "Innovate Inc",
+    name: "Devon Clarke",
+    role: "BMW E46 Owner",
+    company: "Kingston",
     quote:
-      "Our conversion rates improved significantly after the redesign. The team truly understands modern web best practices.",
+      "They treat your car like it's their own. The attention to detail on my E46 restoration was incredible. These guys are true BMW enthusiasts.",
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
   const services = getServices();
+  const { reviews, rating, totalReviews } = await getGoogleReviews();
 
   return (
     <>
       <Hero
-        variant="default"
-        badge="Welcome to MaliaWeb"
-        headline="Build Something Meaningful"
-        description="A professional web framework for organizations that value clarity, performance, and design. Your online presence, reimagined."
-        primaryCta={{ text: "Get Started", href: "/contact" }}
-        secondaryCta={{ text: "Learn More", href: "/about" }}
+        variant="video"
+        badge="Jamaica's #1 BMW & MINI Specialist"
+        headline="Elite BMW Care. Exclusive Rewards."
+        description="Expert mechanical repair, performance tuning, and a loyalty program that treats you like the enthusiast you are."
+        primaryCta={{ text: "Our Services", href: "/services" }}
+        secondaryCta={{ text: "Earn Rewards", href: "/rewards" }}
+        image={{
+          src: "https://scottsautoja.com/wp-content/uploads/2021/02/BMW-lifestyle.jpg",
+          alt: "BMW Lifestyle Autocare",
+        }}
       />
       <FeaturesSection
-        title="Why Choose Us"
-        description="We build websites that are fast, accessible, and designed to grow with your business."
+        title="Why Bimmer Lifestyle"
+        description="More than a shop. A community of BMW enthusiasts dedicated to excellence since 2000."
         features={features}
       />
       <ServicesSection
         title="Our Services"
-        description="Comprehensive solutions tailored to your organization's needs."
+        description="Comprehensive BMW and MINI care from routine maintenance to full performance builds."
         services={services}
       />
-      <StatsSection stats={stats} />
-      <TestimonialsSection
-        title="What Our Clients Say"
-        description="Don't just take our word for it."
-        testimonials={testimonials}
+      <RewardsPromoSection />
+      <LoyaltyTiersSection
+        title="Bimmer Lifestyle Rewards"
+        description="Earn points on every service. Unlock exclusive perks as you move through the tiers. Every customer starts at Bronze."
+        tiers={loyaltyTiers}
+      />
+      <GoogleReviewsSection
+        title="What Our Customers Say"
+        description="Real reviews from our customers on Google."
+        reviews={reviews}
+        overallRating={rating}
+        totalReviews={totalReviews}
+        fallbackTestimonials={fallbackTestimonials}
       />
       <CtaSection
-        headline="Ready to Get Started?"
-        description="Contact us today to discuss your project and see how we can help."
-        cta={{ text: "Contact Us", href: "/contact" }}
+        headline="Ready to Experience the Difference?"
+        description="Contact us today and start earning loyalty rewards from your first visit."
+        cta={{ text: "WhatsApp Us", href: "https://wa.me/18764020107" }}
+        secondaryCta={{ text: "Contact Us", href: "/contact" }}
       />
     </>
   );

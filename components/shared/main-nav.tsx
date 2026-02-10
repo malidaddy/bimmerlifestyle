@@ -19,7 +19,7 @@ export function MainNav({ transparent }: MainNavProps) {
           key={item.href}
           href={item.href}
           className={cn(
-            "text-sm font-medium transition-colors duration-300",
+            "text-base font-semibold transition-colors duration-300",
             transparent
               ? pathname === item.href
                 ? "text-white"

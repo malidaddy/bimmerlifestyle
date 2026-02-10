@@ -2,18 +2,19 @@ import { type SiteConfig } from "@/types/site";
 
 export const siteConfig: SiteConfig = {
   // -- Identity --
-  name: "MaliaWeb",
-  shortName: "Malia",
-  description: "Professional web presence for modern organizations.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://example.com",
+  name: "Bimmer Lifestyle Autocare",
+  shortName: "BMLAC",
+  description:
+    "Montego Bay's premier BMW & MINI specialist. Expert mechanical repair, performance tuning, and an exclusive loyalty rewards program. Serving Jamaica island-wide since 2000.",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://bimmerlifestyle.com",
   ogImage: "/images/og-default.jpg",
 
   // -- Branding --
   logo: {
     src: "/images/logo.svg",
-    alt: "MaliaWeb Logo",
-    width: 140,
-    height: 40,
+    alt: "Bimmer Lifestyle Autocare Logo",
+    width: 160,
+    height: 48,
   },
 
   // -- Navigation --
@@ -21,22 +22,22 @@ export const siteConfig: SiteConfig = {
     { title: "Home", href: "/" },
     { title: "About", href: "/about" },
     { title: "Services", href: "/services" },
-    { title: "Team", href: "/team" },
-    { title: "Gallery", href: "/gallery" },
-    { title: "Blog", href: "/blog" },
+    { title: "Rewards", href: "/rewards" },
     { title: "Contact", href: "/contact" },
   ],
 
   // -- Footer --
   footerNav: {
     company: [
-      { title: "About", href: "/about" },
-      { title: "Team", href: "/team" },
-      { title: "Careers", href: "/careers" },
+      { title: "About Us", href: "/about" },
+      { title: "Our Team", href: "/team" },
+      { title: "Rewards Program", href: "/rewards" },
     ],
     services: [
-      { title: "Consulting", href: "/services#consulting" },
-      { title: "Development", href: "/services#development" },
+      { title: "Diagnostics", href: "/services" },
+      { title: "Engine Repair", href: "/services" },
+      { title: "Performance Tuning", href: "/services" },
+      { title: "Brakes & Suspension", href: "/services" },
     ],
     legal: [
       { title: "Privacy Policy", href: "/privacy" },
@@ -46,32 +47,32 @@ export const siteConfig: SiteConfig = {
 
   // -- Social --
   social: {
-    twitter: "https://twitter.com/example",
-    linkedin: "https://linkedin.com/company/example",
-    github: "https://github.com/example",
+    instagram: "https://instagram.com/scottsautomobay",
+    facebook: "https://facebook.com/Scotts-Auto-Electrical-Supplies-280276578770966",
+    youtube: "https://youtube.com/channel/UCBfMbi3G75jO26Ad8BZyfug",
   },
 
   // -- Contact --
   contact: {
-    email: "hello@example.com",
-    phone: "+1 (555) 000-0000",
+    email: "info@scottsautoja.com",
+    phone: "+1 (876) 971-1859",
     address: {
-      street: "123 Business Ave",
-      city: "San Francisco",
-      state: "CA",
-      zip: "94102",
-      country: "USA",
+      street: "9 Church Hill Ave",
+      city: "Montego Bay",
+      state: "St. James",
+      zip: "",
+      country: "Jamaica",
     },
   },
 
   // -- Theme --
   theme: {
-    accentName: "teal",
+    accentName: "navy",
   },
 
   // -- Feature flags --
   features: {
-    blog: true,
+    blog: false,
     newsletter: true,
     contactForm: true,
     animations: true,
@@ -81,9 +82,9 @@ export const siteConfig: SiteConfig = {
   contactForm: {
     autoResponder: {
       enabled: true,
-      subject: "Thanks for reaching out!",
+      subject: "Thanks for contacting Bimmer Lifestyle Autocare!",
       message:
-        "Thank you for contacting us. We've received your message and will get back to you within 24 hours.",
+        "Thank you for reaching out to Bimmer Lifestyle Autocare. We've received your message and will get back to you within 24 hours. In the meantime, feel free to call us for immediate assistance.",
     },
   },
 };

@@ -15,12 +15,12 @@ export function TestimonialsSection({
   testimonials,
 }: TestimonialsSectionProps) {
   return (
-    <SectionWrapper title={title} description={description}>
+    <SectionWrapper title={title} description={description} className="bg-[#81C4FF]/[0.06]">
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {testimonials.map((testimonial) => (
-          <Card key={testimonial.id} className="h-full">
+          <Card key={testimonial.id} className="h-full border-2 border-foreground/8 shadow-[3px_3px_0_0_rgba(0,0,0,0.06)]">
             <CardContent className="flex h-full flex-col p-6">
-              <div className="mb-4 text-primary">
+              <div className="mb-4 text-[#E7222E]">
                 <svg
                   className="h-8 w-8"
                   fill="currentColor"

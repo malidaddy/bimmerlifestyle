@@ -1,41 +1,119 @@
 [
   {
-    "id": "consulting",
-    "title": "Strategic Consulting",
-    "description": "We help organizations navigate complex challenges with data-driven insights and actionable strategies tailored to your goals.",
-    "icon": "Compass",
+    "id": "diagnostics",
+    "title": "BMW Diagnostics",
+    "description": "Advanced computer diagnostics using BMW-specific ISTA/INPA tools. We read every module to pinpoint issues accurately before any work begins.",
+    "icon": "ScanLine",
     "features": [
-      "Market analysis & research",
-      "Strategic planning & roadmaps",
-      "Growth strategy development",
-      "Competitive positioning"
+      "Full vehicle module scan",
+      "Fault code analysis & interpretation",
+      "Live data monitoring",
+      "Pre-purchase inspection reports"
     ],
     "order": 1
   },
   {
-    "id": "development",
-    "title": "Custom Development",
-    "description": "Building tailored digital solutions that solve real problems, from web applications to integrations and APIs.",
-    "icon": "Code",
+    "id": "noise-detection",
+    "title": "Acoustic Noise Detection",
+    "description": "Our advanced acoustic diagnostic device pinpoints the exact source of any noise on your vehicle — eliminating guesswork, reducing misdiagnosis, and cutting repair time.",
+    "icon": "AudioLines",
     "features": [
-      "Web applications",
-      "Mobile-responsive sites",
-      "API development & integration",
-      "Performance optimization"
+      "Pinpoint noise source with precision",
+      "Eliminate misdiagnosis & repeat visits",
+      "Faster turnaround on noise complaints",
+      "Works on engine, suspension, drivetrain & body"
     ],
     "order": 2
   },
   {
-    "id": "design",
-    "title": "Brand & Design",
-    "description": "Creating compelling visual identities and digital experiences that resonate with your audience and elevate your brand.",
-    "icon": "Palette",
+    "id": "engine-repair",
+    "title": "Engine Repair",
+    "description": "From VANOS and Valvetronic systems to timing chains and head gaskets, we handle the complex BMW engine work other shops turn away.",
+    "icon": "Cog",
     "features": [
-      "Brand identity design",
-      "UI/UX design",
-      "Visual design systems",
-      "Marketing collateral"
+      "VANOS & Valvetronic repair",
+      "Timing chain replacement",
+      "Head gasket & turbo rebuild",
+      "Oil leak & overheating diagnosis"
     ],
     "order": 3
+  },
+  {
+    "id": "brakes-suspension",
+    "title": "Brakes & Suspension",
+    "description": "Precision brake and suspension service to keep your BMW handling the way it was designed to. OEM and performance parts available.",
+    "icon": "CircleDot",
+    "features": [
+      "Brake pad & rotor replacement",
+      "Suspension bushing & control arms",
+      "Shock & strut service",
+      "Wheel alignment & balancing"
+    ],
+    "order": 4
+  },
+  {
+    "id": "oil-service",
+    "title": "Oil & Fluid Service",
+    "description": "BMW-approved oils and fluids applied to factory specifications. We reset service indicators and maintain your digital service history.",
+    "icon": "Droplets",
+    "features": [
+      "Full synthetic oil change",
+      "Transmission & differential fluid",
+      "Coolant system flush",
+      "Brake fluid replacement"
+    ],
+    "order": 5
+  },
+  {
+    "id": "electrical",
+    "title": "Electrical Systems",
+    "description": "BMW electrical systems are complex. We diagnose and repair everything from battery registration to iDrive faults and comfort access modules.",
+    "icon": "Zap",
+    "features": [
+      "Battery registration & coding",
+      "Alternator & starter repair",
+      "Window, mirror & seat motors",
+      "Module programming & coding"
+    ],
+    "order": 6
+  },
+  {
+    "id": "ac-cooling",
+    "title": "A/C & Cooling",
+    "description": "Beat the Caribbean heat. Full A/C diagnostics, recharging, and cooling system overhauls to keep your BMW running cool.",
+    "icon": "Thermometer",
+    "features": [
+      "A/C recharge & leak repair",
+      "Compressor replacement",
+      "Radiator & water pump service",
+      "Thermostat & hose replacement"
+    ],
+    "order": 7
+  },
+  {
+    "id": "performance-tuning",
+    "title": "Performance Tuning",
+    "description": "Unlock your BMW's hidden potential. ECU remapping, intake and exhaust upgrades, and dyno-verified power gains.",
+    "icon": "Gauge",
+    "features": [
+      "ECU remapping & chip tuning",
+      "Intake & exhaust upgrades",
+      "Downpipe & intercooler installation",
+      "Dyno testing & verification"
+    ],
+    "order": 8
+  },
+  {
+    "id": "modifications",
+    "title": "Upgrades & Modifications",
+    "description": "From coilover kits to big brake conversions, we build BMWs that perform as good as they look. Quality parts, expert fitment.",
+    "icon": "Settings",
+    "features": [
+      "Coilover & lowering spring install",
+      "Big brake kit conversion",
+      "LSD & drivetrain upgrades",
+      "Cosmetic & aero modifications"
+    ],
+    "order": 9
   }
 ]
