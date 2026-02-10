@@ -17,8 +17,9 @@ export async function POST(request: Request) {
     const result = await sendContactEmail(validatedData);
 
     if (result.error) {
+      console.error("Email send error:", result.error.message);
       return NextResponse.json(
-        { error: "Failed to send message. Please try again." },
+        { error: "Failed to send message. Please try again.", detail: result.error.message },
         { status: 500 }
       );
     }
