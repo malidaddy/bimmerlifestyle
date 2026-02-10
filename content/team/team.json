@@ -1,0 +1,64 @@
+[
+  {
+    "id": "jane-doe",
+    "name": "Jane Doe",
+    "role": "Chief Executive Officer",
+    "bio": "Jane brings over 20 years of industry experience in strategic leadership and organizational growth. She founded the company with a vision to deliver exceptional results for every client.",
+    "image": "/images/team/placeholder.svg",
+    "social": {
+      "linkedin": "https://linkedin.com/in/janedoe",
+      "email": "jane@example.com"
+    },
+    "order": 1,
+    "type": "team"
+  },
+  {
+    "id": "john-smith",
+    "name": "John Smith",
+    "role": "Chief Technology Officer",
+    "bio": "John is a seasoned technologist with deep expertise in web platforms, cloud infrastructure, and digital transformation. He leads our technical strategy and engineering team.",
+    "image": "/images/team/placeholder.svg",
+    "social": {
+      "linkedin": "https://linkedin.com/in/johnsmith",
+      "email": "john@example.com"
+    },
+    "order": 2,
+    "type": "team"
+  },
+  {
+    "id": "sarah-williams",
+    "name": "Sarah Williams",
+    "role": "Head of Design",
+    "bio": "Sarah leads our design practice with a focus on creating intuitive, accessible, and beautiful digital experiences that drive results for our clients.",
+    "image": "/images/team/placeholder.svg",
+    "social": {
+      "linkedin": "https://linkedin.com/in/sarahwilliams"
+    },
+    "order": 3,
+    "type": "team"
+  },
+  {
+    "id": "michael-chen",
+    "name": "Michael Chen",
+    "role": "Board Chair",
+    "bio": "Michael has served on multiple corporate boards and brings extensive experience in governance, finance, and strategic oversight.",
+    "image": "/images/team/placeholder.svg",
+    "social": {
+      "linkedin": "https://linkedin.com/in/michaelchen"
+    },
+    "order": 1,
+    "type": "board"
+  },
+  {
+    "id": "emily-patel",
+    "name": "Emily Patel",
+    "role": "Board Director",
+    "bio": "Emily is a recognized leader in the technology sector with a track record of building and scaling successful organizations.",
+    "image": "/images/team/placeholder.svg",
+    "social": {
+      "linkedin": "https://linkedin.com/in/emilypatel"
+    },
+    "order": 2,
+    "type": "board"
+  }
+]

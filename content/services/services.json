@@ -1,0 +1,41 @@
+[
+  {
+    "id": "consulting",
+    "title": "Strategic Consulting",
+    "description": "We help organizations navigate complex challenges with data-driven insights and actionable strategies tailored to your goals.",
+    "icon": "Compass",
+    "features": [
+      "Market analysis & research",
+      "Strategic planning & roadmaps",
+      "Growth strategy development",
+      "Competitive positioning"
+    ],
+    "order": 1
+  },
+  {
+    "id": "development",
+    "title": "Custom Development",
+    "description": "Building tailored digital solutions that solve real problems, from web applications to integrations and APIs.",
+    "icon": "Code",
+    "features": [
+      "Web applications",
+      "Mobile-responsive sites",
+      "API development & integration",
+      "Performance optimization"
+    ],
+    "order": 2
+  },
+  {
+    "id": "design",
+    "title": "Brand & Design",
+    "description": "Creating compelling visual identities and digital experiences that resonate with your audience and elevate your brand.",
+    "icon": "Palette",
+    "features": [
+      "Brand identity design",
+      "UI/UX design",
+      "Visual design systems",
+      "Marketing collateral"
+    ],
+    "order": 3
+  }
+]

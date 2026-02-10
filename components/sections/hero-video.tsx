@@ -1,0 +1,92 @@
+import Link from "next/link";
+import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import type { HeroProps } from "@/types/hero";
+
+export function HeroVideo({
+  headline,
+  description,
+  badge,
+  primaryCta,
+  secondaryCta,
+  image,
+  videoSrc,
+  className,
+}: HeroProps) {
+  return (
+    <section
+      data-hero-bleed
+      className={cn(
+        "relative -mt-16 min-h-[100svh] overflow-hidden",
+        className
+      )}
+    >
+      {/* Video or image background */}
+      {videoSrc ? (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+      ) : image ? (
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          className="object-cover"
+          priority
+        />
+      ) : null}
+
+      {/* Gradient overlay — darker at bottom for text, lighter at top to show media */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
+
+      {/* Content — positioned in the lower portion */}
+      <div className="relative flex min-h-[100svh] items-end pb-24 md:items-center md:pb-0">
+        <div className="container flex flex-col items-center text-center text-white">
+          {badge && (
+            <Badge
+              variant="secondary"
+              className="mb-4 bg-white/15 text-white backdrop-blur-sm border-white/20"
+            >
+              {badge}
+            </Badge>
+          )}
+          <h1 className="font-heading max-w-5xl text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
+            {headline}
+          </h1>
+          {description && (
+            <p className="mt-6 max-w-2xl text-lg text-zinc-200 md:text-xl">
+              {description}
+            </p>
+          )}
+          {(primaryCta || secondaryCta) && (
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              {primaryCta && (
+                <Button asChild size="lg" className="text-base px-8">
+                  <Link href={primaryCta.href}>{primaryCta.text}</Link>
+                </Button>
+              )}
+              {secondaryCta && (
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-white/40 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 text-base px-8"
+                >
+                  <Link href={secondaryCta.href}>{secondaryCta.text}</Link>
+                </Button>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
