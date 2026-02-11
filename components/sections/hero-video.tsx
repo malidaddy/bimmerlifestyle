@@ -70,7 +70,7 @@ export function HeroVideo({
               </Badge>
             )
           )}
-          <h1 className="font-heading max-w-5xl text-4xl font-extrabold tracking-tight md:text-6xl lg:text-8xl">
+          <h1 className="font-heading max-w-5xl text-4xl font-bold tracking-tight md:text-5xl lg:text-7xl">
             {headline}
           </h1>
           {description && (

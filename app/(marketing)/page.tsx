@@ -66,7 +66,7 @@ export default async function HomePage() {
     <>
       <Hero
         variant="video"
-        badge="9 Church Hill Ave, Montego Bay, Jamaica"
+        badge="📍 9 Church Hill Ave, Montego Bay 🇯🇲"
         badgeHref="https://www.google.com/maps/search/?api=1&query=9+Church+Hill+Ave+Montego+Bay+St+James+Jamaica"
         headline="Elite BMW Care. Exclusive Rewards."
         description="Expert mechanical repair, performance tuning, and a loyalty program that treats you like the enthusiast you are."

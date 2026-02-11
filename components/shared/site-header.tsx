@@ -37,7 +37,7 @@ export function SiteHeader() {
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300",
         scrolled || !hasHeroBleed
-          ? "border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+          ? "border-b bg-background/98 backdrop-blur supports-[backdrop-filter]:bg-background/85"
           : "border-b border-transparent bg-transparent"
       )}
     >
