@@ -29,7 +29,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteConfig.url,
     title: {
       default: siteConfig.name,
       template: `%s | ${siteConfig.name}`,
@@ -64,7 +63,7 @@ export const metadata: Metadata = {
     "BMW battery registration",
   ],
   alternates: {
-    canonical: siteConfig.url,
+    canonical: "/",
   },
   other: {
     "geo.region": "JM-08",
