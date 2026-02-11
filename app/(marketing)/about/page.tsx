@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Learn about Bimmer Lifestyle Autocare — Montego Bay's trusted BMW & MINI specialist with over 20 years of dedicated experience.",
+  openGraph: {
+    title: "About",
+    description:
+      "Learn about Bimmer Lifestyle Autocare — Montego Bay's trusted BMW & MINI specialist with over 20 years of dedicated experience.",
+    url: "/about",
+  },
+  alternates: { canonical: "/about" },
 };
 
 const stats = [

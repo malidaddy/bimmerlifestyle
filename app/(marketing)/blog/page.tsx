@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Technical guides, build spotlights, and BMW care tips from the Bimmer Lifestyle team.",
+  openGraph: {
+    title: "Blog",
+    description:
+      "Technical guides, build spotlights, and BMW care tips from the Bimmer Lifestyle team.",
+    url: "/blog",
+  },
+  alternates: { canonical: "/blog" },
 };
 
 export default async function BlogPage() {

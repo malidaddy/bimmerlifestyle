@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Full-service BMW repair, maintenance, and performance tuning. From diagnostics to engine rebuilds.",
+  openGraph: {
+    title: "Services",
+    description:
+      "Full-service BMW repair, maintenance, and performance tuning. From diagnostics to engine rebuilds.",
+    url: "/services",
+  },
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

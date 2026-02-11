@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Bimmer Lifestyle Autocare. Reach us via WhatsApp, phone, or our contact form.",
+  openGraph: {
+    title: "Contact",
+    description:
+      "Get in touch with Bimmer Lifestyle Autocare. Reach us via WhatsApp, phone, or our contact form.",
+    url: "/contact",
+  },
+  alternates: { canonical: "/contact" },
 };
 
 const contactCards = [

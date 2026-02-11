@@ -10,6 +10,13 @@ export const metadata: Metadata = {
   title: "Rewards Program",
   description:
     "Join the Bimmer Lifestyle Rewards Program. Earn points on every service and unlock exclusive benefits from Bronze to VIP Diamond.",
+  openGraph: {
+    title: "Rewards Program",
+    description:
+      "Join the Bimmer Lifestyle Rewards Program. Earn points on every service and unlock exclusive benefits from Bronze to VIP Diamond.",
+    url: "/rewards",
+  },
+  alternates: { canonical: "/rewards" },
 };
 
 const howItWorks = [
