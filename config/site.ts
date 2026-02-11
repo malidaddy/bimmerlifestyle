@@ -30,8 +30,8 @@ export const siteConfig: SiteConfig = {
   footerNav: {
     company: [
       { title: "About Us", href: "/about" },
-      { title: "Our Team", href: "/team" },
       { title: "Rewards Program", href: "/rewards" },
+      { title: "Contact Us", href: "/contact" },
     ],
     services: [
       { title: "Diagnostics", href: "/services" },

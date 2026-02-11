@@ -66,13 +66,14 @@ export default async function HomePage() {
     <>
       <Hero
         variant="video"
-        badge="Jamaica's #1 BMW & MINI Specialist"
+        badge="9 Church Hill Ave, Montego Bay, Jamaica"
+        badgeHref="https://www.google.com/maps/search/?api=1&query=9+Church+Hill+Ave+Montego+Bay+St+James+Jamaica"
         headline="Elite BMW Care. Exclusive Rewards."
         description="Expert mechanical repair, performance tuning, and a loyalty program that treats you like the enthusiast you are."
         primaryCta={{ text: "Our Services", href: "/services" }}
         secondaryCta={{ text: "Earn Rewards", href: "/rewards" }}
         image={{
-          src: "https://scottsautoja.com/wp-content/uploads/2021/02/BMW-lifestyle.jpg",
+          src: "https://scottsautoja.com/wp-content/uploads/2021/06/bimmerlife_1.jpg",
           alt: "BMW Lifestyle Autocare",
         }}
       />
@@ -82,9 +83,10 @@ export default async function HomePage() {
         features={features}
       />
       <ServicesSection
-        title="Our Services"
-        description="Comprehensive BMW and MINI care from routine maintenance to full performance builds."
+        title="What We Do"
+        description="Everything your BMW or MINI needs, under one roof."
         services={services}
+        compact
       />
       <RewardsPromoSection />
       <LoyaltyTiersSection

@@ -10,5 +10,6 @@ export interface HeroProps {
   image?: { src: string; alt: string };
   videoSrc?: string;
   badge?: string;
+  badgeHref?: string;
   className?: string;
 }

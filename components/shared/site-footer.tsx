@@ -130,14 +130,21 @@ export function SiteFooter() {
               </h4>
               <ul className="space-y-3">
                 {address && (
-                  <li className="flex items-start gap-2.5 text-sm text-zinc-400">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#81C4FF]" />
-                    <span>
-                      {address.street}
-                      <br />
-                      {address.city}, {address.state}
-                      {address.country && <><br />{address.country}</>}
-                    </span>
+                  <li>
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${address.street}, ${address.city}, ${address.state}, ${address.country}`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-start gap-2.5 text-sm text-zinc-400 transition-colors hover:text-white"
+                    >
+                      <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#81C4FF]" />
+                      <span>
+                        {address.street}
+                        <br />
+                        {address.city}, {address.state}
+                        {address.country && <><br />{address.country}</>}
+                      </span>
+                    </a>
                   </li>
                 )}
                 {siteConfig.contact.phone && (

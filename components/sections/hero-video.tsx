@@ -9,6 +9,7 @@ export function HeroVideo({
   headline,
   description,
   badge,
+  badgeHref,
   primaryCta,
   secondaryCta,
   image,
@@ -44,19 +45,30 @@ export function HeroVideo({
         />
       ) : null}
 
-      {/* Gradient overlay — darker at bottom for text, lighter at top to show media */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
+      {/* Gradient overlay — darker for readability */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-black/60" />
 
       {/* Content — positioned in the lower portion */}
       <div className="relative flex min-h-[100svh] items-end pb-24 md:items-center md:pb-0">
         <div className="container flex flex-col items-center text-center text-white">
           {badge && (
-            <Badge
-              variant="secondary"
-              className="mb-4 bg-white/15 text-white backdrop-blur-sm border-white/20"
-            >
-              {badge}
-            </Badge>
+            badgeHref ? (
+              <a href={badgeHref} target="_blank" rel="noopener noreferrer" className="pointer-events-auto">
+                <Badge
+                  variant="secondary"
+                  className="mb-4 bg-white/15 text-white backdrop-blur-sm border-white/20 hover:bg-white/25 transition-colors cursor-pointer"
+                >
+                  {badge}
+                </Badge>
+              </a>
+            ) : (
+              <Badge
+                variant="secondary"
+                className="mb-4 bg-white/15 text-white backdrop-blur-sm border-white/20"
+              >
+                {badge}
+              </Badge>
+            )
           )}
           <h1 className="font-heading max-w-5xl text-4xl font-extrabold tracking-tight md:text-6xl lg:text-8xl">
             {headline}

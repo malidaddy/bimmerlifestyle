@@ -102,18 +102,5 @@
       "Dyno testing & verification"
     ],
     "order": 8
-  },
-  {
-    "id": "modifications",
-    "title": "Upgrades & Modifications",
-    "description": "From coilover kits to big brake conversions, we build BMWs that perform as good as they look. Quality parts, expert fitment.",
-    "icon": "Settings",
-    "features": [
-      "Coilover & lowering spring install",
-      "Big brake kit conversion",
-      "LSD & drivetrain upgrades",
-      "Cosmetic & aero modifications"
-    ],
-    "order": 9
   }
 ]

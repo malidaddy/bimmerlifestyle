@@ -115,14 +115,34 @@ export async function sendAutoResponse(toEmail: string, toName: string) {
 }
 
 export async function addNewsletterSubscriber(email: string) {
+  const apiKey = process.env.BREVO_API_KEY || process.env.EMAIL_SERVER_PASSWORD || "";
+  const listId = Number(process.env.BREVO_LIST_ID) || 22;
+
   try {
-    const info = await getTransporter().sendMail({
-      from: getFromAddress(),
-      to: email,
-      subject: "Welcome to our newsletter!",
-      html: `<p>Thank you for subscribing to our newsletter. We'll keep you updated with the latest news and insights.</p>`,
+    const res = await fetch("https://api.brevo.com/v3/contacts", {
+      method: "POST",
+      headers: {
+        "api-key": apiKey,
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        listIds: [listId],
+        updateEnabled: true,
+      }),
     });
-    return { data: { id: info.messageId }, error: null };
+
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}));
+      // "duplicate_parameter" means already subscribed — treat as success
+      if (body.code === "duplicate_parameter") {
+        return { data: { id: email }, error: null };
+      }
+      return { error: { message: body.message || `Brevo API error ${res.status}` } };
+    }
+
+    return { data: { id: email }, error: null };
   } catch (err) {
     return { error: { message: (err as Error).message } };
   }
