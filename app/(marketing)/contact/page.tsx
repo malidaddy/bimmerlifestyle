@@ -129,6 +129,20 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Google Maps */}
+      <section className="w-full">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.37909685086!2d-77.92045762495137!3d18.466479782616616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eda2a7d5c0e52ef%3A0xf6ad9eca2eea19dc!2sScott&#39;s%20AUTO%20Electrical%20Supplies!5e0!3m2!1sen!2sjm!4v1770780466710!5m2!1sen!2sjm"
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Bimmer Lifestyle Autocare location on Google Maps"
+        />
+      </section>
+
       {/* Quick contact CTA */}
       <section
         className="relative overflow-hidden py-16 md:py-20 text-white"
