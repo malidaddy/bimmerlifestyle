@@ -40,7 +40,7 @@ export function MobileNav({ transparent }: MobileNavProps) {
       </SheetTrigger>
       <SheetContent
         side="right"
-        className="w-[300px] sm:w-[400px] bg-zinc-950 border-l border-zinc-800 text-white p-0"
+        className="w-[300px] sm:w-[400px] bg-zinc-950 border-l border-zinc-800 text-white p-0 [&>button]:z-20"
       >
         <div className="relative overflow-hidden h-full">
           {/* Car SVG watermark */}
