@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
   description:
     "Montego Bay's premier BMW & MINI specialist. Expert mechanical repair, performance tuning, and an exclusive loyalty rewards program. Serving Jamaica island-wide since 2000.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://bimmerlifestyle.com",
-  ogImage: "/images/og-default.jpg",
+  ogImage: "/opengraph-image",
 
   // -- Branding --
   logo: {
