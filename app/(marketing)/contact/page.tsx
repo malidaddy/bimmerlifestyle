@@ -27,8 +27,8 @@ const contactCards = [
   {
     icon: Mail,
     title: "Email",
-    lines: ["info@scottsautoja.com"],
-    href: "mailto:info@scottsautoja.com",
+    lines: ["scottsauto1859@yahoo.com"],
+    href: "mailto:scottsauto1859@yahoo.com",
   },
   {
     icon: MapPin,

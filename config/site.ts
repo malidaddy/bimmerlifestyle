@@ -54,7 +54,7 @@ export const siteConfig: SiteConfig = {
 
   // -- Contact --
   contact: {
-    email: "info@scottsautoja.com",
+    email: "scottsauto1859@yahoo.com",
     phone: "+1 (876) 971-1859",
     address: {
       street: "9 Church Hill Ave",
