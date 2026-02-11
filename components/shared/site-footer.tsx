@@ -210,7 +210,7 @@ export function SiteFooter() {
               href="https://malidaddy.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 text-xs text-[hsl(var(--accent))]"
+              className="flex items-center space-x-2 text-xs text-zinc-500"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1207.04 127.58" className="w-20 h-auto fill-current">
                 <polygon points="265.08 30.37 244.67 0 186.72 0 186.72 29.24 234.79 29.93 235.69 86.68 191.3 86.1 190 86.08 190 54.47 158.52 54.47 158.52 4.82 80.9 63.44 80.9 15.93 0 77.03 0 127.58 77.63 68.95 77.63 116.47 158.52 55.37 158.52 115.01 189.82 115.01 229.95 115.64 246.62 97.6 256.46 86.93 265.88 76.76 265.08 30.37" />
