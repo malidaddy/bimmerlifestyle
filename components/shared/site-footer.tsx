@@ -15,7 +15,7 @@ export function SiteFooter() {
         className="h-1.5"
         style={{
           background:
-            "linear-gradient(90deg, #16588E 0%, #16588E 33%, #81C4FF 33%, #81C4FF 66%, #E7222E 66%, #E7222E 100%)",
+            "linear-gradient(90deg, #16588E 0%, #81C4FF 50%, #E7222E 100%)",
         }}
       />
 

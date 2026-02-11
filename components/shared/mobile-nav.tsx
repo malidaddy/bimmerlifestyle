@@ -55,7 +55,7 @@ export function MobileNav({ transparent }: MobileNavProps) {
             className="absolute left-0 top-0 h-full w-1.5"
             style={{
               background:
-                "linear-gradient(180deg, #16588E 0%, #16588E 33%, #81C4FF 33%, #81C4FF 66%, #E7222E 66%, #E7222E 100%)",
+                "linear-gradient(180deg, #16588E 0%, #81C4FF 50%, #E7222E 100%)",
             }}
           />
 
