@@ -40,25 +40,26 @@ export function MobileNav({ transparent }: MobileNavProps) {
       </SheetTrigger>
       <SheetContent
         side="right"
-        className="w-[300px] sm:w-[400px] bg-zinc-950 border-l border-zinc-800 text-white relative overflow-hidden p-0"
+        className="w-[300px] sm:w-[400px] bg-zinc-950 border-l border-zinc-800 text-white p-0"
       >
-        {/* Car SVG watermark */}
-        <LogoWatermark
-          color="white"
-          opacity={4}
-          className="-right-10 bottom-10 w-[350px] rotate-[-8deg]"
-        />
+        <div className="relative overflow-hidden h-full">
+          {/* Car SVG watermark */}
+          <LogoWatermark
+            color="white"
+            opacity={4}
+            className="-right-10 bottom-10 w-[350px] rotate-[-8deg]"
+          />
 
-        {/* BMW tri-color accent line */}
-        <div
-          className="absolute left-0 top-0 h-full w-1.5"
-          style={{
-            background:
-              "linear-gradient(180deg, #16588E 0%, #16588E 33%, #81C4FF 33%, #81C4FF 66%, #E7222E 66%, #E7222E 100%)",
-          }}
-        />
+          {/* BMW tri-color accent line */}
+          <div
+            className="absolute left-0 top-0 h-full w-1.5"
+            style={{
+              background:
+                "linear-gradient(180deg, #16588E 0%, #16588E 33%, #81C4FF 33%, #81C4FF 66%, #E7222E 66%, #E7222E 100%)",
+            }}
+          />
 
-        <div className="relative z-10 flex flex-col h-full pt-8 pb-10 px-6">
+          <div className="relative z-10 flex flex-col h-full pt-8 pb-10 px-6">
           {/* Logo */}
           <div className="mb-10">
             <Image
@@ -112,6 +113,7 @@ export function MobileNav({ transparent }: MobileNavProps) {
               {siteConfig.contact.email}
             </p>
           </div>
+        </div>
         </div>
       </SheetContent>
     </Sheet>
