@@ -84,7 +84,7 @@ export const siteConfig: SiteConfig = {
       enabled: true,
       subject: "Thanks for contacting Bimmer Lifestyle Autocare!",
       message:
-        "Thank you for reaching out to Bimmer Lifestyle Autocare. We've received your message and will get back to you within 24 hours. In the meantime, feel free to call us for immediate assistance.",
+        "Thank you for reaching out to Bimmer Lifestyle Autocare! We've received your message and our team will get back to you shortly. If you need immediate assistance, don't hesitate to give us a call or send us a WhatsApp message.",
     },
   },
 };

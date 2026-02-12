@@ -3,9 +3,22 @@ import { z } from "zod";
 import { newsletterSchema } from "@/lib/validations/newsletter";
 import { addNewsletterSubscriber } from "@/lib/email";
 import { isBot, stripHoneypot } from "@/lib/honeypot";
+import { isRateLimited } from "@/lib/rate-limit";
 
 export async function POST(request: Request) {
   try {
+    const ip =
+      request.headers.get("x-forwarded-for")?.split(",")[0].trim() ??
+      request.headers.get("x-real-ip") ??
+      "unknown";
+
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
 
     // Bot detection — return 200 silently so bots think it worked
