@@ -21,15 +21,15 @@ const contactCards = [
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    lines: ["+1 (876) 402-0107"],
-    href: "https://wa.me/18764020107",
+    lines: ["+1 (876) 859-1704"],
+    href: "https://wa.me/18768591704",
     accent: true,
   },
   {
     icon: Phone,
     title: "Call Us",
-    lines: ["+1 (876) 971-1859"],
-    href: "tel:+18769711859",
+    lines: ["+1 (876) 859-1704"],
+    href: "tel:+18768591704",
   },
   {
     icon: Mail,
@@ -169,7 +169,7 @@ export default function ContactPage() {
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
-              href="https://wa.me/18764020107"
+              href="https://wa.me/18768591704"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-lg inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-10 text-lg font-bold text-white shadow-lg shadow-[#25D366]/25 transition-all duration-300 hover:bg-[#20bd5a] hover:shadow-[#25D366]/40"
@@ -178,7 +178,7 @@ export default function ContactPage() {
               WhatsApp Us
             </a>
             <a
-              href="tel:+18769711859"
+              href="tel:+18768591704"
               className="btn-lg inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/40 px-10 text-lg font-bold text-white transition-colors hover:bg-white/15"
             >
               <Phone className="h-5 w-5" />

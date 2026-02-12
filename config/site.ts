@@ -55,7 +55,7 @@ export const siteConfig: SiteConfig = {
   // -- Contact --
   contact: {
     email: "scottsauto1859@yahoo.com",
-    phone: "+1 (876) 971-1859",
+    phone: "+1 (876) 859-1704",
     address: {
       street: "9 Church Hill Ave",
       city: "Montego Bay",

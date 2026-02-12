@@ -105,7 +105,7 @@ export default async function HomePage() {
       <CtaSection
         headline="Ready to Experience the Difference?"
         description="Contact us today and start earning loyalty rewards from your first visit."
-        cta={{ text: "WhatsApp Us", href: "https://wa.me/18764020107" }}
+        cta={{ text: "WhatsApp Us", href: "https://wa.me/18768591704" }}
         secondaryCta={{ text: "Contact Us", href: "/contact" }}
       />
     </>

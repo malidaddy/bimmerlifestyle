@@ -113,7 +113,7 @@ export default function RewardsPage() {
       <CtaSection
         headline="Ready to Join?"
         description="Your first service starts earning points automatically. No signup needed, just bring your BMW."
-        cta={{ text: "WhatsApp Us", href: "https://wa.me/18764020107" }}
+        cta={{ text: "WhatsApp Us", href: "https://wa.me/18768591704" }}
         secondaryCta={{ text: "View Services", href: "/services" }}
       />
     </>

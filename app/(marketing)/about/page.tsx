@@ -170,7 +170,7 @@ export default function AboutPage() {
       <CtaSection
         headline="Experience the Bimmer Lifestyle"
         description="Get in touch and see why BMW owners across Jamaica trust us with their vehicles."
-        cta={{ text: "WhatsApp Us", href: "https://wa.me/18764020107" }}
+        cta={{ text: "WhatsApp Us", href: "https://wa.me/18768591704" }}
         secondaryCta={{ text: "View Rewards", href: "/rewards" }}
       />
     </>

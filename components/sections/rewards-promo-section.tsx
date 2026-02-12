@@ -97,7 +97,7 @@ export function RewardsPromoSection() {
                 style={{ color: "#16588E", borderColor: "rgba(22,88,142,0.2)" }}
                 className="border-2 hover:bg-[#16588E]/5 hover:text-[#16588E]"
               >
-                <Link href="https://wa.me/18764020107">Start Earning</Link>
+                <Link href="https://wa.me/18768591704">Start Earning</Link>
               </Button>
             </div>
           </div>
